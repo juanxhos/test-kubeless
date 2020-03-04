@@ -1,0 +1,17 @@
+service: test
+
+provider:
+  name: kubeless
+  runtime: nodejs12
+
+plugins:
+  - serverless-kubeless
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: ping
+          method: get
+
